@@ -2,12 +2,12 @@
 
 Our client, SellBuy, has requested an analysis of Amazon review data.  The purpose of the analysis is to investigate and understand the benefits of the [Amazon Vine program](https://www.amazon.com/gp/vine/help).  The Vine program, administered through Amazon, allows companies to provide complementary products to Amazon customers.  In exchange for the product, the customer agrees to share honest feedback with Amazon customers by posting a review of new products.
 
-In order to allow analyzation of the data, an ETL (Extract, Transform, Load) script was developed.  The project utilizes PySpark and PostgreSQL.  Various datasets were made available.  For the purposes of this analysis, the dataset for pet product was selected given SellBuy’s pet-focused offerings.  The dataset was extracted into a DataFrame.  The data was then transformed into various tables removing null and duplicate values.  Finally, the data was loaded into the database.
+In order to allow analyzation of the data, an ETL (Extract, Transform, Load) script was developed.  The project utilizes PySpark and PostgreSQL.  Various datasets were made available.  For this analysis, the dataset for pet products was used since SellBuy has a large focus on these products.  The dataset was extracted into a DataFrame.  The data was then transformed into various tables removing null and duplicate values.  Finally, the data was loaded into the database.
 
 
 # Results
 
-Once in the database, additional data wrangling was performed to meet the requirements of the project.  As requested, the reviews were filtered to only include those with at least 20 votes, at least half of which were helpful votes.  
+Once in the database, additional data wrangling was performed to meet the requirements of the project.  Other Amazon customers can cast a vote to indicate if a review was helpful or not helpful.  As requested, the reviews were filtered to only include those with 20 or more total votes, at least half of which were helpful votes.  
 
 Those were then split into reviews that were part of the Vine program and those that were not.  Finally, the 5-star reviews from both categories were captured.
 
